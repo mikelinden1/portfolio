@@ -1,21 +1,21 @@
 <a href="#/" class="pull-right btn btn-default"><span class="fa fa-chevron-left"></span>&nbsp;&nbsp;Back</a>
-<h1>{{project.thisProject.name}}</h1>
+<h2 class="no-top-margin">{{project.thisProject.name}}</h2>
 <p ng-show="project.thisProject.description">{{project.thisProject.description}}</p>
 <p ng-show="project.thisProject.link"><span class="fa fa-link"></span>&nbsp;&nbsp;<a href="{{project.thisProject.link}}" target="_blank">View This Project</a></p>
 
-<h1 class="topMargin">Technologies Used</h1>
+<h3 class="no-bottom-margin top-margin">Technologies Used</h3>
 <ul class="tags">
 	<li ng-repeat="tech in project.thisProject.tech">{{tech}}</li>
 </ul>
 
-<h1 class="topMargin">Project Screen Caps</h1>
+<h3 class="no-bottom-margin">Project Screen Caps</h3>
 <div class="projects">
 	<div class="project" ng-repeat="photo in project.thisProject.photos" ng-click="project.showLarger(photo)">
 		<div class="thumb">
 			<img ng-src="images/projects/{{project.thisProject.photoDir}}/{{photo}}-thumb.png" />
 		</div>
 	</div>
-	
+
 	<div class="clearfix"></div>
 </div>
 

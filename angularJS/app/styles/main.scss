@@ -1,107 +1,55 @@
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
-@mixin scale($x, $y) {
-	    -ms-transform: scale($x,$y);
-  -webkit-transform: scale($x,$y);
-          transform: scale($x,$y);
-}
-@mixin transition($time) {
-	-webkit-transition: $time;
-		    	transition: $time;
-}
-
-@mixin opacity($opacity) {
-	$opacityPerc: $opacity * 100;
-
-	@if $opacity > 1 {
-		$opacityPerc: $opacity;
-		$opacity: $opacityPerc / 100;
-	}
-
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityPerc + ")";
-			filter: alpha(opacity=$opacityPerc);
-	   opacity: $opacity;
-}
-@mixin blur($radius) {
-	-webkit-filter: blur($radius);
-       -moz-filter: blur($radius);
-         -o-filter: blur($radius);
-        -ms-filter: blur($radius);
-            filter: blur($radius);
-}
+@import 'partials/mixins';
+@import 'partials/typography';
+@import 'partials/tags';
+@import 'partials/contact-method';
+@import 'partials/gallery';
+@import 'partials/projects';
 
 .wrapper {
     padding: 40px;
-    background-color:#f5f5f5;
+    background-color: #f5f5f5;
 
-    color:#74777a;
-    font-size:13px;
-    font-family: 'Gotham SSm A', 'Gotham SSm B', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #74777a;
+    font-size: 13px;
+
+    @media screen and (max-width: 775px) {
+        padding: 10px;
+    }
 }
 
 .contentContainer {
     width:100%;
     height:auto;
 
-    max-width: 1000px;
+    max-width: 1300px;
 
     margin:0 auto;
 
 	.sidebar {
-		width:250px;
-		height:auto;
+		width: 250px;
+		height: auto;
 
-		float:left;
+		float: left;
 
 		.profilePhoto {
-			width:250px;
-			height:250px;
+			width: 250px;
+			height: auto;
+			position: relative;
+			padding-top: 250px;
 
 			overflow: hidden;
 
 			img {
 				width:100%;
 				height:auto;
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
 		}
 
-		h1 {
-			font-size:26px;
-			font-weight: 300;
-			margin:20px 0 0 0;
-		}
-
-		h2 {
-			font-size:16px;
-			font-weight: 300;
-			margin:5px 0;
-
-			color:#74777a;
-		}
-
-		.contactArea {
+		.contact-area {
 			margin-top: 20px;
-
-			a {
-                color:#74777a;
-                @include transition(0.5s);
-
-                &:hover {
-                    color:#337ab7;
-                    text-decoration: none;
-                }
-            }
-			.contactMethod {
-				margin-bottom:7px;
-
-				.fa {
-					font-size:16px;
-				}
-			}
 		}
 	}
 
@@ -117,21 +65,6 @@
 
 		.padding {
 			padding:40px;
-		}
-
-		h1 {
-			font-size:30px;
-			font-weight: 300;
-			margin:0 0 20px 0;
-
-			&.topMargin {
-				margin-top:40px;
-			}
-		}
-
-		h2 {
-    		font-size: 14px;
-    		text-transform: uppercase;
 		}
 
 	}
@@ -163,7 +96,7 @@
                 	margin-top: 0;
             	}
 
-            	.contactMethod {
+            	.contact-method {
                 	display: inline-block;
                 	margin: 0 6px;
                 	font-size: 10px;
@@ -173,8 +106,8 @@
                 	}
             	}
 
-            	.contactArea.links {
-                	.contactMethod {
+            	.contact-area.links {
+                	.contact-method {
                     	font-size: 0;
 
                     	.fa {
@@ -185,134 +118,60 @@
         	}
     	}
 	}
+
+	@media screen and (max-width: 775px) {
+    	.sidebar .info {
+        	.contact-area.contact .contact-method {
+            	display: block;
+            	margin: 5px 0;
+            	font-size: 13px;
+            }
+
+            .contact-area.links .contact-method .fa {
+            	font-size: 25px;
+        	}
+        }
+	}
+
+	@media screen and (max-width: 520px) {
+    	.sidebar {
+        	margin-bottom: 10px;
+
+    		.profilePhoto, .info {
+            	display: block;
+            	width: 100%;
+    		}
+
+    		.profilePhoto {
+        		width: 100%;
+        		padding-top: 100%;
+    		}
+
+    		.info {
+        		padding: 20px;
+        		text-align: center;
+    		}
+        }
+
+    }
 }
-.tags {
-	list-style: none;
-	margin:0 0 20px 0;
-	padding:0px;
 
-	li {
-		width:auto;
-		height:50px;
-
-		margin-bottom:20px;
-		margin-right:5px;
-
-		box-sizing: border-box;
-
-		@include border-radius(14px);
-
-		display:inline;
-
-		border: 1px solid #e1e4e5;
-		padding:8px;
-
-	}
-}
-.projects {
-	.project {
-		width:315px;
-		height:auto;
-
-		float:left;
-
-		margin-bottom:40px;
-
-		cursor: pointer;
-
-		&:nth-of-type(odd) {
-			margin-right:38px;
-		}
-
-		.thumb {
-			width:100%;
-			height:180px;
-			overflow: hidden;
-
-			border: 1px solid #e1e4e5;
-
-			@include border-radius(10px);
-
-			img {
-				width:100%;
-				@include transition(0.5s);
-
-			}
-		}
-		h3 {
-			text-align: center;
-			font-size:25px;
-			font-weight: 200;
-			margin:20px 0 0 0;
-			@include transition(0.5s);
-		}
-
-		&:hover {
-			h3 {
-				color:#337ab7;
-			}
-			.thumb {
-				img {
-					width:110%;
-					margin-left:-5%;
-					margin-top:-5%;
-				}
-			}
-		}
-	}
-}
-.gallery {
-	.closeBtn {
-		position: fixed;
-		top:10px;
-		right:10px;
-		z-index: 11;
-
-		color:#fff;
-		font-size:30px;
-		cursor: pointer;
-	}
-	.overlay {
-		width:100%;
-		height:100%;
-
-		position: fixed;
-		top:0;
-		left:0;
-		background:#363636;
-		@include opacity(0.8);
-		z-index: 10;
-	}
-	.photo {
-		position:fixed;
-		top:50%;
-		left:50%;
-		margin-left:-500px;
-		margin-top:-300px;
-		width:1000px;
-		height:600px;
-
-		z-index: 11;
-		overflow: hidden;
-		img {
-			width:100%;
-			height: auto;
-		}
-	}
-}
 .fadeIn {
 	@include transition(0.5s);
 	opacity: 1;
 }
+
 .fadeIn.ng-hide {
     opacity: 0;
 }
+
 .view {
 	&.ng-enter {
 	  @include transition(0.7s);
-	  opacity:0;
+	  opacity: 0;
+
 	  &.ng-enter-active {
-		  opacity:1;
+		  opacity: 1;
 		}
 	}
 }

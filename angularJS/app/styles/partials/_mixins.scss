@@ -1,0 +1,35 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin scale($x, $y) {
+	    -ms-transform: scale($x,$y);
+  -webkit-transform: scale($x,$y);
+          transform: scale($x,$y);
+}
+@mixin transition($time) {
+	-webkit-transition: $time;
+		    	transition: $time;
+}
+
+@mixin opacity($opacity) {
+	$opacityPerc: $opacity * 100;
+
+	@if $opacity > 1 {
+		$opacityPerc: $opacity;
+		$opacity: $opacityPerc / 100;
+	}
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityPerc + ")";
+			filter: alpha(opacity=$opacityPerc);
+	   opacity: $opacity;
+}
+@mixin blur($radius) {
+	-webkit-filter: blur($radius);
+       -moz-filter: blur($radius);
+         -o-filter: blur($radius);
+        -ms-filter: blur($radius);
+            filter: blur($radius);
+}

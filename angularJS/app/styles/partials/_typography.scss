@@ -1,0 +1,32 @@
+* {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	margin: 0 0 20px 0;
+}
+
+h2 {
+	font-size: 30px;
+	font-weight: 300;
+	margin: 20px 0;
+}
+
+h3 {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin: 0 0 20px 0;
+}
+
+h1, h2, h3 {
+	&.no-bottom-margin {
+		margin-bottom: 10px;
+	}
+	&.top-margin {
+		margin-top: 20px;
+	}
+	&.no-top-margin {
+    	margin-top: 0;
+	}
+}
