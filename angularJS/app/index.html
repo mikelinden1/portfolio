@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mike Linden - Portfolio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/fontawesome.css -->
+		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" />
+		<!-- endbuild -->
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="portfolioApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="wrapper">
+        <div class="contentContainer">
+            <div class="sidebar">
+                <div class="profilePhoto">
+                    <img src="images/mike.jpg" alt="Photo of Mike Linden" />
+                </div>
+
+                <div class="info">
+                    <div class="heading">
+                        <h1>Mike Linden</h1>
+                        <h2>Front End Developer</h2>
+                    </div>
+
+        		  	<div class="contactArea contact">
+        		  		<div class="contactMethod"><span class="fa fa-phone"></span>&nbsp;&nbsp;(612) 801-8378</div>
+        					<div class="contactMethod"><a href="mailto:mike@mikelinden.com"><span class="fa fa-envelope"></span>&nbsp;&nbsp;Mike@MikeLinden.com</a></div>
+        		  		<div class="contactMethod"><a href="http://www.mikelinden.com" target="_blank"><span class="fa fa-home"></span>&nbsp;&nbsp;MikeLinden.com</a></div>
+        		  	</div>
+
+        		  	<div class="clearfix"></div>
+
+        		  	<div class="contactArea links">
+        		  		<div class="contactMethod"><a href="https://github.com/mikelinden1/snake" target="_blank"><span class="fa fa-github"></span>&nbsp;&nbsp;@mikelinden1</a></div>
+        		  		<div class="contactMethod"><a href="https://instagram.com/mikeiskool/" target="_blank"><span class="fa fa-instagram"></span>&nbsp;&nbsp;@mikeiskool</a></div>
+        		  		<div class="contactMethod"><a href="https://twitter.com/mikelinden1" target="_blank"><span class="fa fa-twitter"></span>&nbsp;&nbsp;@MikeLinden1</a></div>
+        		  		<div class="contactMethod"><a href="http://facebook.com/mike.linden2" target="_blank"><span class="fa fa-facebook"></span>&nbsp;&nbsp;&nbsp;Mike Linden</a></div>
+        		  	</div>
+
+    		  	</div>
+    		  	<div class="clearfix"></div>
+    	  	</div>
+
+    	  	<div class="content">
+    		  	<div class="padding">
+    					<div ng-view="" class="view"></div>
+    		  	</div>
+    	  	</div>
+
+    	  	<div class="clearfix"></div>
+        </div>
+    </div>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/project.js"></script>
+        <script src="scripts/services/getprojects.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

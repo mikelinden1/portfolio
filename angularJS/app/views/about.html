@@ -1,0 +1,47 @@
+<h1>Professional Developer Specializing in Front-End</h1>
+<p>I started building websites professionally when I was 12 years old. My father, who spotted my interest in computers, taught me HTML, CSS, and ASP and hired me to write websites. Since then I have written 100+ websites for companies of all sizes; from a small website that sells sport water bottles to a large financial institution with 84,000 members. I am driven to write clean and efficient code to get the job done right.</p>
+
+<h1 class="topMargin">Skills</h1>
+<h2>Frameworks</h2>
+<ul class="tags">
+	<li>Angular 2/4</li>
+	<li>AngularJS</li>
+	<li>jQuery</li>
+	<li>SASS</li>
+	<li>Nativescript</li>
+	<li>NodeJS</li>
+	<li>ExpressJS</li>
+	<li>mySQL</li>
+	<li>MongoDB</li>
+</ul>
+<h2>Languages</h2>
+<ul class="tags">
+	<li>HTML5</li>
+	<li>CSS3</li>
+	<li>Javascript</li>
+	<li>Typescript</li>
+	<li>PHP</li>
+</ul>
+<h2>Tools</h2>
+<ul class="tags">
+	<li>Git</li>
+	<li>NPM</li>
+	<li>Webpack</li>
+	<li>Yeoman</li>
+	<li>Bower</li>
+	<li>Grunt</li>
+</ul>
+
+<h1 class="topMargin">Recent Projects</h1>
+<div class="projects">
+	<div class="project" ng-repeat="project in about.projects track by $index" ng-click="about.goToProject($index)">
+		<div class="thumb">
+			<img ng-src="images/projects/{{project.photoDir}}/1-thumb.png" />
+		</div>
+		<div class="caption">
+			<h3>{{project.name}}</h3>
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+</div>
